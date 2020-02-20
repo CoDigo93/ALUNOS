@@ -20,5 +20,30 @@ module.exports = {
             
             return response.json(alunos);
         }
-    } 
+    }, 
+
+    async delete(request,response){
+        const delaluno = await Aluno.deleteMany(request.params);
+        console.log(request.params);
+        console.log(delaluno);
+        return response.json(delaluno);
+        
+    },
+
+    async update(request,response){
+        
+        console.log(request.body);
+
+        const upAluno = await Aluno.findByIdAndUpdate(request.params._id,
+            {$set:{name:request.body.name,
+                   instrument:request.body.instrument}},{
+                    
+                    new:true,
+                    useFindAndModify:false
+        
+        });
+            
+        console.log(upAluno);
+        return response.json(upAluno);
+    }
 }
