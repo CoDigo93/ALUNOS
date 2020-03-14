@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 connection = mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-e4zi2.mongodb.net/alunos?retryWrites=true&w=majority', {
     useNewUrlParser:true,
     useUnifiedTopology:true,
+    useCreateIndex: true,
 });
 
 mongoose.connection.on('connected', function(){
