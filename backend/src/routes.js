@@ -14,5 +14,6 @@ routes.put('/alunos/:_id', AlunoController.update);
 //<<<<<<<<<<<ROTAS DE USUÁRIOS>>>>>>>>>>>>
 
 routes.post('/usuarios', UsuarioController.register);
+routes.post('/autenticar', UsuarioController.authenticate);
 
 module.exports = routes;
