@@ -9,8 +9,8 @@ const app = express();
 
 app.use(express.json());
 
+require('./controllers/projectController')(app);
 app.use(routes);
-
 /*app.post('/', (request,response)=>{
     console.log(request.body);
     return response.json(request.body);
