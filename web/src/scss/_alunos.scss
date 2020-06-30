@@ -1,0 +1,106 @@
+@import 'variaveis';
+
+.alunos-table{
+    margin:0px !important;
+    color:whitesmoke;
+}
+.name-search-conteiner{
+    display:flex;
+    align-items: inline;
+    padding: 0 !important;
+    
+}
+#search-input{
+    width:150px;
+    margin-left:10px;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 0;
+    
+    
+   
+}
+.searchButton{
+    color: thistle;
+    transition: 0.4s;    
+    border: 0px !important;  
+}
+.searchButton:hover{
+    color:white !important;
+  
+    
+}
+.searchButton:focus, .editButton:focus, .deleteButton:focus{
+    display: none;
+}
+
+.editButton , .deleteButton{
+    color: thistle;
+}
+
+
+.aluno-button a{
+    @include custombutton(transparent,#708090);
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-left:60%;
+    margin-top:-73px;
+    width:20%;
+    text-decoration: inherit;
+    height:60px;
+    border-radius: 8px;
+    
+    
+}
+#Button{
+
+    #Button:focus{
+      display:none !important;
+    }
+  }
+
+.list-conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: cover;
+    z-index:1;
+    color:wheat;
+    margin-top: 10%;
+    
+}
+.hide{
+    display: none;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:25px 0px 25px 25px;
+}
+/*
+.list-group{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 700px;
+    height: 500px;
+    grid-gap: 24px;
+    .Link{
+        text-decoration:none;
+    }
+    li {
+        border-radius: 5px;
+        list-style: none;
+        display: block;
+        
+    }
+    .list-group:hover{
+        background-color: #696969 !important;
+    }     
+    
+}   
+*/

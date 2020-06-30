@@ -1,0 +1,132 @@
+@import "variaveis";
+@import 'register';
+@import 'login';
+@import 'leaves';
+@import 'alunos';
+@import 'modalaluno';
+@import 'home';
+
+
+// Gradient backgrounds
+@mixin bg-gradient($parent, $gradient) {
+  #{$parent} {
+    background: $gradient;
+  }
+}
+// Gradient text
+@mixin text-gradient($parent, $gradient) {
+  #{$parent} {
+    background-image: $gradient;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+// Gradient text
+@mixin text-gradient($parent, $gradient) {
+  #{$parent} {
+    background-image: $gradient;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+
+$blue:    #007bff ;
+$indigo:  #6610f2 ;
+$purple:  #6f42c1 ;
+$pink:    #e83e8c ;
+$red:     #dc3545 ;
+$orange:  #fd7e14 ;
+$yellow:  #ffc107 ;
+$green:   #28a745 ;
+$teal:    #20c997 ;
+$cyan:    #17a2b8 ;
+
+$colors: () ;
+$enable-shadows:true;
+$enable-gradients:true;
+
+
+.cadastro-conteiner{
+  
+    width:100%;
+    max-width:1120px;
+    height:100vh;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+    
+    -webkit-font-smoothing:antialiased;
+
+ .logo {
+   width:100%;
+   max-width:500px;
+ }   
+
+
+}
+
+#root{
+    background-image: $degrade2;
+    height: 120vh;
+    
+    
+}
+
+.form{
+    @extend %customform;
+    
+    input{
+      @extend %custominput;
+
+    }
+    button{
+      @extend %custombutton;
+        
+    }  
+    textarea{
+      resize: vertical;
+    }  
+    
+}
+.coment {
+  color: #D2B48C;
+}
+label{
+  color:#8B4513	;
+  font-weight:700;
+}
+
+ campo-instrumento{
+  color:#fff;
+}
+
+h1{
+  font-family:'Source Sans Pro',sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  color:#5f3c24;
+  margin-bottom: 50px;
+  -webkit-font-smoothing:antialiased;
+}
+.link{
+  @include link(inherit);
+}
+.Home{
+  background-color: $degrade;
+}
+
+
+
+$theme-colors: (
+  "primary":#5F9EA0	,
+  
+  "danger": #ff4136
+);
+
+
+

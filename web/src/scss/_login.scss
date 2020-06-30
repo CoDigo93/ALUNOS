@@ -1,0 +1,55 @@
+@import 'variaveis';
+
+
+.login-form{
+    position:relative;
+    width:100%;
+    background-color:transparent;
+    height:110vh;
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    button{
+        @extend %custombutton;
+    }
+    h1{
+        margin-right: 50px;
+        font-size:3em;
+        font-weight:bold;
+        color:#000000;
+        -webkit-text-stroke-width:0.1px;
+        -webkit-text-stroke-color:#E0FFFF;
+        -webkit-font-smoothing-:antialiased;
+    }
+
+    form input{
+        background:transparent;
+        border:0.5px solid #E0FFFF;
+
+    }
+    form label{
+        color:#8B4513;
+        -webkit-font-smoothing-:antialiased;
+    }
+    a{
+        @include link(white);
+        margin-left: auto;
+        transition:opacity 0.2;
+        
+        a:hover{
+            opacity:0.8;
+
+        }
+        svg{
+            margin-right:10px;
+        }
+       }
+       .assign{
+        flex:1;
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+    }    
+ 
+    }

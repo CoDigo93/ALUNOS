@@ -2,7 +2,7 @@ Aluno = require('../models/Aluno');
 
 module.exports = {
     async index(request, response){
-        const alunos = await Aluno.findOne(request.query);
+        const alunos = await Aluno.find();
         return response.json(alunos);
     },
 

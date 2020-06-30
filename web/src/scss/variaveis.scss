@@ -1,0 +1,61 @@
+$degrade: linear-gradient(0deg, #5f3c24	 0%,#A0522D 100%);
+$degrade2:linear-gradient(0deg, #000000	 0%,#E0FFFF 80%);
+$madeira:linear-gradient(to bottom,transparent,rgba(0,0,0,.1));
+
+@mixin link($cor){
+  text-decoration:inherit !important; 
+  color:$cor;
+  display: flex;
+  align-items: center;
+  
+}
+@mixin custombutton($cor,$text){
+  background-color: $cor ;
+  color:$text;
+  transition:all .5s;
+    
+}
+
+%customform{
+    align-items: center;
+    width:35%;
+    margin-right:150px;
+}
+
+%custominput{
+color:#2F4F4F;
+  width:100%;
+  height:60px;
+  border:2px solid #A0522D;
+  border-radius:8px;
+  padding:0 24px;
+}
+
+  %custombutton{
+    background-color:#5f3c24;
+  /*background-image:linear-gradient(to bottom,rgba(255,255,255,.1),rgba(255,255,255,.4) 49%,rgba(255,255,255,0) 50%,rgba(255,255,255,.4));*/
+  /*background-image:linear-gradient(87deg,rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4)100%);
+  */
+  background-image:$madeira;
+  color:#fff;
+  transition:all .5s;
+  
+  }
+  
+  .rg-form button:hover{
+    background-color:#A0522D;
+    color:#fff;
+  } 
+  .form button:hover{
+    background-color: #A0522D;
+    color:#fff;
+  }
+  .aluno-button a:hover{
+    background-color:rgba(0,0,0,.2) !important;
+    color:#fff;
+
+}
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;1,400&display=swap');
