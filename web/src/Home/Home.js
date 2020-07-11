@@ -41,8 +41,8 @@ const Home = (props) => {
   const toggle = () => setIsOpen(!isOpen);
   
   return (
-    <html className="Home">
-    <div>
+    
+    <div className="Home">
       <Navbar color="" light expand="md" >
         <div className = "container">
         <NavbarBrand href="/"><img src={icone} alt ="Bigodeira" /></NavbarBrand>
@@ -82,7 +82,7 @@ const Home = (props) => {
         <Button onClick={handleLogout} color="" className="logout"><FiPower/></Button>
       </Navbar>
     </div>
-    </html>
+    
 
   );
 }

@@ -6,7 +6,8 @@ import {FiSearch, FiEdit, FiTrash2} from 'react-icons/fi';
 import api from '../Services/API';
 
 
-const Alunos = (props) => {
+
+export default function Alunos () {
  const [alunos, setAlunos]= useState([]);
 
   useEffect(() =>{
@@ -14,6 +15,8 @@ const Alunos = (props) => {
       setAlunos(response.data)
     });
   },[]);
+
+  
 
   async function deleteAluno(_id){
     try{  
@@ -30,6 +33,15 @@ function toggleSearch(event){
   var busca = document.querySelector('#inputSearch');
   busca.classList.toggle('hide');
 
+}
+
+function toggleEditInput(event){
+  var input = document.querySelector('#editInput');
+
+  input.classList.toggle('hide');
+  
+
+  
 }
 
 function buscaAlunos(event){
@@ -87,17 +99,20 @@ console.log(event.target.value);
       <tbody>
         
           {alunos.map((aluno,i) => (
+          <>  
+          <tr key={aluno._id} className="tralunos">
+          <th  scope="row">{i}</th>
+            <td  id='name'><p id='name'>{aluno.name}</p> 
             
-            <>
-            
-          <tr  className="tralunos">
-          <th key={aluno._id} scope="row">{i}</th>
-            <td id='name'>{aluno.name} 
-              <Button id="Button"
-                      onClick={toggleSearch} 
+              <Button id="Button" 
                       color="" 
+                      onClick={()=> {
+                        localStorage.setItem('alunoId' , aluno._id)
+                      }}
                       className="editButton">
-                      <FiEdit/>
+                      
+                      <Link className="link" to="alunos/modal"><FiEdit/></Link>  
+                      
               </Button>
               <Button id="Button"
                       onClick={() => deleteAluno(aluno._id)} 
@@ -132,29 +147,8 @@ console.log(event.target.value);
         
       </tbody>
     </Table>
-  
-
-
-   {/* <ul><ListGroup className="list-group">
-        <Link className="Link" to="/alunos/modal"><li><ListGroupItem color ="dark" active tag="a" href="/alunos/modal" action>Rodrigo Lustosa</ListGroupItem></li></Link>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Fernanda Garcia</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Raquel Rodrigues</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Julio Rocha</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Tahani Al-Jamil</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Eleanor Shelstrop</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Michael</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Jason Mendoza</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Julio Rocha</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Julio Rocha</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Julio Rocha</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Julio Rocha</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Julio Rocha</ListGroupItem></li>
-        <li><ListGroupItem color ="dark" active tag="a" href="#" action>Julio Rocha</ListGroupItem></li>
-      </ListGroup>
-  </ul>*/}
     </div>
     </>
       );
 }
 
-export default Alunos;
