@@ -34,7 +34,7 @@ function toggleSearch(event){
   busca.classList.toggle('hide');
 
 }
-
+/*
 function toggleEditInput(event){
   var input = document.querySelector('#editInput');
 
@@ -43,7 +43,7 @@ function toggleEditInput(event){
 
   
 }
-
+*/
 function buscaAlunos(event){
   
 var alunos = document.querySelectorAll('.tralunos');

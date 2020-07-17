@@ -5,7 +5,7 @@
 @import 'alunos';
 @import 'modalaluno';
 @import 'home';
-
+@import 'cadastroaluno';
 
 // Gradient backgrounds
 @mixin bg-gradient($parent, $gradient) {
@@ -49,50 +49,13 @@ $enable-shadows:true;
 $enable-gradients:true;
 
 
-.cadastro-conteiner{
-  
-    width:100%;
-    max-width:1120px;
-    height:100vh;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    
-    
-    -webkit-font-smoothing:antialiased;
-
- .logo {
-   width:100%;
-   max-width:500px;
- }   
-
-
-}
-
 #root{
     background-image: $degrade2;
-    height: 120vh;
-    
+    height: 100vh;
+    width: 100vw;
     
 }
 
-.form{
-    @extend %customform;
-    
-    input{
-      @extend %custominput;
-
-    }
-    button{
-      @extend %custombutton;
-        
-    }  
-    textarea{
-      resize: vertical;
-    }  
-    
-}
 .coment {
   color: #D2B48C;
 }
@@ -118,6 +81,22 @@ h1{
 }
 .Home{
   background-color: $degrade;
+}
+.form{
+  @extend %customform;
+  
+  input{
+    @extend %custominput;
+
+  }
+  button{
+    @extend %custombutton;
+      
+  }  
+  textarea{
+    resize: vertical;
+  }  
+  
 }
 
 

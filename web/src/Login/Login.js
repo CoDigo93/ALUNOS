@@ -47,9 +47,9 @@ export default function Login(props) {
 
   return (
     <>
-     <Leaves />
+    <Leaves />  
     <div className="login-form">
-      
+    
       <h1 className="">Faça o login</h1>
       <Form onSubmit={handleLogin} className="form">
         <FormGroup>

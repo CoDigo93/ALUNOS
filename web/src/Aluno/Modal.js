@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import Alunos from './Alunos';
 import {FormGroup,Input,Button} from 'reactstrap';
 import {FiXSquare} from 'react-icons/fi';
 import{Link,useHistory} from 'react-router-dom';
@@ -64,7 +63,7 @@ export default function Modal(){
              </FormGroup>
              
         </div>
-        <Alunos />
+        
         </>
             
            

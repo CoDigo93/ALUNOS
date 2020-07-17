@@ -37,7 +37,7 @@ const CadastroAluno = (props) => {
     <Home/>
     <div className="cadastro-conteiner">
           
-          <section className="form">
+          <section className="cad-form">
             <h1>Cadastre um aluno</h1>      
             <Form onSubmit={handleCadastro} >
 

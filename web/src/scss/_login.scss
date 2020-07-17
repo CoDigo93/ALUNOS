@@ -1,4 +1,90 @@
 @import 'variaveis';
+@media (max-width:1000px ){
+    
+    *{
+        margin: 0 !important;
+    }
+
+    #root{
+        width: 100vw!important;
+        height: 100vh!important;
+    }
+    .login-form{
+        margin-right: 0px !important;
+        display: row!important;
+        justify-content: center!important;
+        align-items: center!important;
+    }
+   
+    .leaf div img{
+        height: 40px!important;
+        width: 40px!important;
+
+    }
+
+    .form{
+        display: inherit!important;
+        justify-content: center!important;
+        align-items: center!important;
+        margin: 20vh 0px 0px 32vw !important;
+        
+    }
+    h1{
+        font-size: 2.5em!important;
+        display: flex;
+        justify-content: center;
+        transform: translateY(10vh);
+    }
+
+}
+@media (max-width:699px ){
+    .leaf{
+        width:90vw !important;
+        height: 85vh!important;
+        
+        div img{
+            width: 25px!important;
+            height: 20px!important;
+        }
+    }
+   
+    .form{
+        margin:0  auto !important;
+        width:80vw !important;
+        
+    }
+    .login-form {
+        
+        display: row !important;
+        width: inherit !important;
+        height: inherit !important;
+
+        h1{
+            margin: 0 auto 25vh auto !important;
+            transform: translate3D(0vh,15vh,0);
+            
+            font-size: 2em !important;
+            display: flex!important;      
+            flex: 1 !important;
+            width:100vw !important;
+            justify-content: center;
+        }
+
+        .assign{
+            display: row !important;
+            justify-content: center !important;
+            align-items: center;
+        }
+        button{
+            width:200px !important;
+        }
+
+        a{
+            display: row!important;
+        }
+    }
+
+}
 
 
 .login-form{
@@ -6,20 +92,21 @@
     width:100%;
     background-color:transparent;
     height:110vh;
-    margin: 0 auto;
-    display:flex;
+    margin: 0 0 0 32vw;
+    display:row;
     align-items: center;
     justify-content: center;
     button{
         @extend %custombutton;
     }
     h1{
-        margin-right: 50px;
+        transform:translateY(10vh);
+        margin-bottom: 30vh;
+        margin-left: 7vw;
         font-size:3em;
-        font-weight:bold;
-        color:#000000;
-        -webkit-text-stroke-width:0.1px;
-        -webkit-text-stroke-color:#E0FFFF;
+        font-weight:medium;
+        color:#8B4513aa;
+        
         -webkit-font-smoothing-:antialiased;
     }
 
@@ -27,9 +114,11 @@
         background:transparent;
         border:0.5px solid #E0FFFF;
 
+        
+
     }
     form label{
-        color:#8B4513;
+        color:#8B4513bb;
         -webkit-font-smoothing-:antialiased;
     }
     a{
