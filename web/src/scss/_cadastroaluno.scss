@@ -1,0 +1,132 @@
+
+@media (max-width:1000px){
+@media (max-width:750px ) {
+    #root{
+        height: 110vh !important;
+    }
+    section{
+        display: row;
+        align-items: center;
+        justify-content: center!important;
+        flex:1;
+        margin-left:10vw !important;
+        
+    }
+    .cadastro-conteiner{
+        width: 100%;
+        margin:auto;
+        align-items:center!important;
+        justify-content: center!important;
+        height:538px;
+
+        .logo{
+            display: none;
+        }
+
+        h1{
+            
+            font-size: 30px!important;
+            margin-right:10vw!important;
+            transform: translateY(-10vh);
+        }
+    }
+
+    .cad-form{
+        input, textarea, button{
+            width:80vw;
+            margin:auto;
+        }
+        label{
+            margin-left: 30px;
+            font-size: 14px;
+        }
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .navbar-text, .logout{
+        display: none;
+    }
+  
+}
+
+@media (min-width:751px){
+    .logo{
+        display: none;
+        width:200px !important;
+        
+       
+    }
+    #root{
+        height:112vh !important;
+    }
+    .cad-form{
+        display:flex;
+        flex:1;
+        margin-right:0px;
+        gap:10px;
+        justify-content: space-around;
+
+        h1{
+            font-size: 35px!important;
+            transform: translate3D(10px,-50px,0px);
+            
+            margin-right: 60px;
+            
+        }
+
+        input{
+            width:50vw;
+        }
+    }
+}
+}
+#root{
+    height:110vh !important;
+    
+}
+.cadastro-conteiner{
+  
+    width:100%;
+    max-width:1220px;
+    height:100vh;
+    max-height: 500px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+    
+    
+    
+    -webkit-font-smoothing:antialiased;
+
+ .logo {
+   width:100%;
+   max-width:500px;
+ }   
+
+
+}
+
+.cad-form{
+    @extend %customform;
+    
+    input{
+      @extend %custominput;
+
+    }
+    button{
+      @extend %custombutton;
+        
+    }  
+    textarea{
+      resize: vertical;
+    }  
+    
+}
+ 
+
+
