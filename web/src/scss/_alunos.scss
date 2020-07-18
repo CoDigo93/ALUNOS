@@ -1,5 +1,73 @@
 @import 'variaveis';
+@media(max-width:1023px){
+    .aluno-button a{
+        width: 30vw!important;
+        position: absolute;
+        top:0;
+        margin-top: 15px!important;
+        margin-left: 35vw!important;
+        font-size: 14px;
+        background-color:#5f3c24!important;
+        color: whitesmoke!important;
+        
+    }
 
+}
+@media (max-width:767px){
+    .navbar-toggler{
+        border-radius: 0px 5px 5px 0px!important;
+    }
+    .aluno-button a{
+        width: 40vw!important;
+        position: absolute;
+        top:0;
+        margin-top: 15px!important;
+        margin-left: 33vw!important;
+        font-size: 14px;
+        background-color:#5f3c24!important;
+        color: whitesmoke!important;
+        border-radius: 5px 0px 0px 5px!important;
+    
+    }
+
+}
+@media(max-width:424px){
+    .navbar-toggler{
+        border-radius: 0px 5px 5px 0px!important;
+    }
+    .aluno-button a{
+        width: 40vw!important;
+        position: absolute;
+        top:0;
+        margin-top: 15px!important;
+        margin-left: 31vw!important;
+        font-size: 13px;
+        background-color:#5f3c24!important;
+        color: whitesmoke!important;
+        border-radius: 5px 0px 0px 5px!important;
+        display: row!important;
+        padding-left: 6px!important;
+    }
+
+}
+@media(max-width:364px){
+  
+    .navbar-toggler{
+        border-radius: 0px 5px 5px 0px!important;
+    }
+    .aluno-button a{
+        width: 40vw!important;
+        position: absolute;
+        top:0;
+        margin-top: 15px!important;
+        margin-left: 30vw!important;
+        font-size: 12px;
+        background-color:#5f3c24!important;
+        color: whitesmoke!important;
+        border-radius: 5px 0px 0px 5px!important;
+        
+    }
+}
 p{
     margin: 0;
 
@@ -109,25 +177,4 @@ span{
     
     
 }
-/*
-.list-group{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 700px;
-    height: 500px;
-    grid-gap: 24px;
-    .Link{
-        text-decoration:none;
-    }
-    li {
-        border-radius: 5px;
-        list-style: none;
-        display: block;
-        
-    }
-    .list-group:hover{
-        background-color: #696969 !important;
-    }     
-    
-}   
-*/
+
