@@ -43,10 +43,10 @@ async authenticate(request,response){
         const user = await Usuario.findOne({login}).select('+password');
             
         if(!user)
-            return response.status(404).send({error: 'Usuário não encontrado'});
+            return response.status(404).send({error: 'User not found!'});
         
        if(! await bcrypt.compare(password, user.password))
-            return response.status(404).send({error: 'Password inválido'});
+            return response.status(404).send({error: 'Invalid password!'});
         
         user.password = undefined;
 
@@ -55,7 +55,7 @@ async authenticate(request,response){
         return response.send({user, token});
     
     }catch(err){
-        err = response.status(400).send({error: 'Falha ao encontrar usuário'});
+        err = response.status(400).send({error: 'Failed to find user'});
         console.log('falha ao encontrar usuário');
         return err;
     }

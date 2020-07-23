@@ -5,14 +5,14 @@ const Aluno = require('../models/Aluno');
 module.exports = {
     async index(request, response){
         const alunos = await Aluno.find();
-        if(!alunos) return response.status(400).send('Não foi encontrado nenhum aluno.');
+        if(!alunos) return response.status(400).send('No student found.');
 
         return response.json(alunos);
     },
 
     async store(request, response){
         try{
-        const {name, instrument} = request.body;
+        const {name, instrument, aula, description} = request.body;
         
         let aluno = await Aluno.findOne({name});
         
@@ -21,19 +21,21 @@ module.exports = {
                
                 name,
                 instrument,
-            })
+                aula,
+                description
+            });
             
             return response.json(alunos);
         }
             
         }catch(err){
-            return response.status(400).send('Erro na criação, tente novamente!');
+            return response.status(400).send('Creation error, try again!');
         }
     }, 
 
     async delete(request,response){
         const delaluno = await Aluno.deleteMany(request.params);
-        if(!delaluno) return response.status(400).send('Não foi encontrado registros com esse id!');
+        if(!delaluno) return response.status(400).send('No records found with this id!');
 
         console.log(request.params);
         console.log(delaluno);
@@ -48,7 +50,9 @@ module.exports = {
 
         const upAluno = await Aluno.findByIdAndUpdate(request.params._id,
             {$set:{name:request.body.name,
-                   instrument:request.body.instrument}},{
+                   instrument:request.body.instrument,
+                   aula:request.body.aula,
+                   description:request.body.description}},{
                     
                     new:true,
                     useFindAndModify:false
@@ -58,7 +62,7 @@ module.exports = {
         console.log(upAluno);
         return response.json(upAluno);
     }catch(err){
-        return response.status(400).send('Não foi possível atualizar o registro,tente novamente!');
+        return response.status(400).send('The record could not be updated, please try again!');
     }
     },
 
@@ -71,29 +75,17 @@ module.exports = {
         });
         
         
-        if(!aluno) return response.status(400).send('aluno não encontrado!');
+        if(!aluno) return response.status(400).send('Student not found!');
         console.log(aluno);
 
          return response.json(aluno);
     }catch(err){
-        return response.status(400).send('Não foi possível atualizar o registro,tente novamente!');
+        return response.status(400).send('The record could not be updated, please try again!');
     }
-        /*
         
-
-        let query = {$set:{}};
-        for(let i in request.body ){
-            //se nesse índice existe alg propriedade dentro desse objeto e ela for diferente da que vem na requisição, faz o update.
-            if(aluno[i] && aluno[i] !== request.body[i])
-                query.$set[i] = request.body[i];
-            
-
-           const updtAluno = await Aluno.updateOne({_id:request.params._id}, query);
-            return response.send(aluno);     
-        */
-        }
-
+        
+    }
         
 
 
-    }
+}
