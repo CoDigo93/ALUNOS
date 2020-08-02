@@ -12,10 +12,9 @@ const AlunoSchema = mongoose.Schema({
     },
 
     aula:{
-        type:Date,
-        required:true
+        type:Date
         
-        
+       
     },
 
     description:String,

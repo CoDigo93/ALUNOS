@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const AulaSchema = mongoose.Schema({
     aula:{
-        type:String,
+        type:Date,
         required:true,
           
     },

@@ -1,24 +1,41 @@
 import React,{useState} from 'react';
+import DatePicker, {registerLocale} from 'react-datepicker';
+import ptbr from 'date-fns/locale/pt-br';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-/*import imagemViolao from '../config';*/
 import logo from '../assets/logo-musica.png'
 import Home from '../Home/Home'
 import api from '../Services/API';
 
+registerLocale('pt-br', ptbr);
+
+
+
 const CadastroAluno = (props) => {
+
   const[name, setName] = useState('');
   const[instrument, setInstrument] = useState('');
-  const[coment, setComent] = useState('');
+  const[description, setDescription] = useState('');
+  const[aula, setAula] = useState(null);
   
+
+
   async function handleCadastro(event){
     event.preventDefault();
+    
     const data ={
       name,
       instrument,
-      coment,
+      aula
+     
     }
+    
     try{
-       await api.post('/alunos',data);
+      
+      
+      console.log(data);
+      await api.post('/alunos',data);
       alert('Cadastro realizado com sucesso!')
     
     }catch(err){
@@ -26,8 +43,9 @@ const CadastroAluno = (props) => {
     }
 
     document.getElementById('campo-nome').value =""
-  document.getElementById('campo-instrumento').value ="";
-  document.getElementById('exampleText').value ="";
+    document.getElementById('campo-instrumento').value ="";
+    document.getElementById('exampleText').value ="";
+    document.getElementById('datepicker').value="";
   }
 
   
@@ -60,18 +78,33 @@ const CadastroAluno = (props) => {
                        value={instrument}
                        onChange={event => setInstrument(event.target.value)} />
               </FormGroup>
-              
+              <FormGroup>
+              <Label for="Horario" className="coment">Data/Horário da aula</Label>
+              <DatePicker id="datepicker"
+                      selected={aula}
+                      onChange={date => setAula(date)} 
+                      showTimeSelect
+                      placeholderText='Selecione a data'
+                      dateFormat="dd/MM/yyyy - HH:mm"  
+                      locale = 'pt-br'
+                      minDate={new Date()}
+                      
+                      
+                  />
+                  
+              </FormGroup>
               <FormGroup>
                 <Label for="exampleText" className="coment">Comentários</Label>
                 <Input type="textarea"
                        name="text"
                        id="exampleText"
-                       value={coment}
-                       onChange={event => setComent(event.target.value)}  />
+                       value={description}
+                       onChange={event => setDescription(event.target.value)}  />
               </FormGroup>
                 
               <Button color= "">Cadastrar</Button>
             </Form>
+            
           </section>
           <img src={logo}className="logo" alt="Bigodeira"></img>
           

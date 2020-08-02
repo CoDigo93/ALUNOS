@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Home from '../Home/Home';
 import {FiSearch, FiEdit, FiTrash2} from 'react-icons/fi';
 import api from '../Services/API';
+import moment from 'moment';
+import 'moment/locale/pt-br';
+
 
 
 
@@ -131,7 +134,7 @@ console.log(event.target.value);
               </Button>
             </td>
             
-            <td id='date'> 
+            <td id='date'>{moment(aluno.aula).locale('pt-BR').format('dddd - HH:mm [horas]')} 
               <Button id="Button"
                       onClick={toggleSearch} 
                       color="" 
